@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/tasks">Tâches</a>
+        <a href="/about">À propos</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    
+    <h1>Contact</h1>
+    <p>Vous pouvez me contacter à l'adresse suivante :</p>
+    <p><strong>Email :</strong> <%= email %></p>
+    
+    <h3>Formulaire de contact</h3>
+    <form>
+        <div>
+            <label>Nom :</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label>Message :</label>
+            <textarea name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

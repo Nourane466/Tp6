@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Tâches</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/tasks">Tâches</a>
+        <a href="/about">À propos</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    
+    <h1>Mes Tâches</h1>
+    <p>Nombre total de tâches : <%= tasks.length %></p>
+    
+    <ul>
+        <% tasks.forEach(task => { %>
+            <li>
+                <%= task.title %> 
+                - <% if (task.done) { %> 
+                     Terminé 
+                <% } else { %> 
+                     En cours 
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+    
+    <h3>Ajouter une tâche</h3>
+    <form action="/api/tasks" method="POST">
+        <input type="text" name="title" placeholder="Titre de la tâche" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    
+    <a href="/">Retour à l'accueil</a>
+</body>
+</html>
